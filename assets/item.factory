@@ -1,0 +1,3 @@
+prototype: "/assets/item.go"
+load_dynamically: false
+dynamic_prototype: false

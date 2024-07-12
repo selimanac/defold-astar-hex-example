@@ -1,0 +1,51 @@
+name: "hex"
+instances {
+  id: "camera"
+  prototype: "/orthographic/camera.go"
+  position {
+    x: 375.0
+    y: 194.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "zoom"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "projection"
+      value: "FIXED_AUTO"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "script"
+  data: "components {\n"
+  "  id: \"hex\"\n"
+  "  component: \"/main/main.script\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "factories"
+  data: "components {\n"
+  "  id: \"hex\"\n"
+  "  component: \"/assets/hex.factory\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"hero\"\n"
+  "  component: \"/assets/hero.factory\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"item\"\n"
+  "  component: \"/assets/item.factory\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"selected\"\n"
+  "  component: \"/assets/selected.factory\"\n"
+  "}\n"
+  ""
+}

@@ -1,0 +1,3 @@
+prototype: "/assets/hex.go"
+load_dynamically: false
+dynamic_prototype: false

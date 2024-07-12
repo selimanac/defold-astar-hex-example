@@ -1,0 +1,280 @@
+images {
+  image: "/assets/Tiles/alienBeige.png"
+}
+images {
+  image: "/assets/Tiles/alienBlue.png"
+}
+images {
+  image: "/assets/Tiles/alienGreen.png"
+}
+images {
+  image: "/assets/Tiles/alienPink.png"
+}
+images {
+  image: "/assets/Tiles/alienYellow.png"
+}
+images {
+  image: "/assets/Tiles/bushAutumn.png"
+}
+images {
+  image: "/assets/Tiles/bushDirt.png"
+}
+images {
+  image: "/assets/Tiles/bushGrass.png"
+}
+images {
+  image: "/assets/Tiles/bushMagic.png"
+}
+images {
+  image: "/assets/Tiles/bushSand.png"
+}
+images {
+  image: "/assets/Tiles/bushSnow.png"
+}
+images {
+  image: "/assets/Tiles/flowerBlue.png"
+}
+images {
+  image: "/assets/Tiles/flowerGreen.png"
+}
+images {
+  image: "/assets/Tiles/flowerRed.png"
+}
+images {
+  image: "/assets/Tiles/flowerWhite.png"
+}
+images {
+  image: "/assets/Tiles/flowerYellow.png"
+}
+images {
+  image: "/assets/Tiles/hillAutumn.png"
+}
+images {
+  image: "/assets/Tiles/hillDirt.png"
+}
+images {
+  image: "/assets/Tiles/hillGrass.png"
+}
+images {
+  image: "/assets/Tiles/hillMagic.png"
+}
+images {
+  image: "/assets/Tiles/hillSand.png"
+}
+images {
+  image: "/assets/Tiles/hillSnow.png"
+}
+images {
+  image: "/assets/Tiles/pineAutumn_high.png"
+}
+images {
+  image: "/assets/Tiles/pineAutumn_low.png"
+}
+images {
+  image: "/assets/Tiles/pineAutumn_mid.png"
+}
+images {
+  image: "/assets/Tiles/pineBlue_high.png"
+}
+images {
+  image: "/assets/Tiles/pineBlue_low.png"
+}
+images {
+  image: "/assets/Tiles/pineBlue_mid.png"
+}
+images {
+  image: "/assets/Tiles/pineGreen_high.png"
+}
+images {
+  image: "/assets/Tiles/pineGreen_low.png"
+}
+images {
+  image: "/assets/Tiles/pineGreen_mid.png"
+}
+images {
+  image: "/assets/Tiles/rockDirt.png"
+}
+images {
+  image: "/assets/Tiles/rockDirt_moss1.png"
+}
+images {
+  image: "/assets/Tiles/rockDirt_moss2.png"
+}
+images {
+  image: "/assets/Tiles/rockDirt_moss3.png"
+}
+images {
+  image: "/assets/Tiles/rockSnow_1.png"
+}
+images {
+  image: "/assets/Tiles/rockSnow_2.png"
+}
+images {
+  image: "/assets/Tiles/rockSnow_3.png"
+}
+images {
+  image: "/assets/Tiles/rockStone.png"
+}
+images {
+  image: "/assets/Tiles/rockStone_moss1.png"
+}
+images {
+  image: "/assets/Tiles/rockStone_moss2.png"
+}
+images {
+  image: "/assets/Tiles/rockStone_moss3.png"
+}
+images {
+  image: "/assets/Tiles/smallRockDirt.png"
+}
+images {
+  image: "/assets/Tiles/smallRockGrass.png"
+}
+images {
+  image: "/assets/Tiles/smallRockSnow.png"
+}
+images {
+  image: "/assets/Tiles/smallRockStone.png"
+}
+images {
+  image: "/assets/Tiles/tileAutumn.png"
+}
+images {
+  image: "/assets/Tiles/tileAutumn_full.png"
+}
+images {
+  image: "/assets/Tiles/tileAutumn_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileDirt.png"
+}
+images {
+  image: "/assets/Tiles/tileDirt_full.png"
+}
+images {
+  image: "/assets/Tiles/tileDirt_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileGrass.png"
+}
+images {
+  image: "/assets/Tiles/tileGrass_full.png"
+}
+images {
+  image: "/assets/Tiles/tileGrass_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileLava.png"
+}
+images {
+  image: "/assets/Tiles/tileLava_full.png"
+}
+images {
+  image: "/assets/Tiles/tileLava_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileMagic.png"
+}
+images {
+  image: "/assets/Tiles/tileMagic_full.png"
+}
+images {
+  image: "/assets/Tiles/tileMagic_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileRock.png"
+}
+images {
+  image: "/assets/Tiles/tileRock_full.png"
+}
+images {
+  image: "/assets/Tiles/tileRock_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileSand.png"
+}
+images {
+  image: "/assets/Tiles/tileSand_full.png"
+}
+images {
+  image: "/assets/Tiles/tileSand_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileSnow.png"
+}
+images {
+  image: "/assets/Tiles/tileSnow_full.png"
+}
+images {
+  image: "/assets/Tiles/tileSnow_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileStone.png"
+}
+images {
+  image: "/assets/Tiles/tileStone_bridge.png"
+}
+images {
+  image: "/assets/Tiles/tileStone_full.png"
+}
+images {
+  image: "/assets/Tiles/tileStone_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileWater.png"
+}
+images {
+  image: "/assets/Tiles/tileWater_full.png"
+}
+images {
+  image: "/assets/Tiles/tileWater_shadow.png"
+}
+images {
+  image: "/assets/Tiles/tileWater_tile.png"
+}
+images {
+  image: "/assets/Tiles/tileWood_bridge.png"
+}
+images {
+  image: "/assets/Tiles/treeAutumn_high.png"
+}
+images {
+  image: "/assets/Tiles/treeAutumn_low.png"
+}
+images {
+  image: "/assets/Tiles/treeAutumn_mid.png"
+}
+images {
+  image: "/assets/Tiles/treeBlue_high.png"
+}
+images {
+  image: "/assets/Tiles/treeBlue_low.png"
+}
+images {
+  image: "/assets/Tiles/treeBlue_mid.png"
+}
+images {
+  image: "/assets/Tiles/treeCactus_1.png"
+}
+images {
+  image: "/assets/Tiles/treeCactus_2.png"
+}
+images {
+  image: "/assets/Tiles/treeCactus_3.png"
+}
+images {
+  image: "/assets/Tiles/treeGreen_high.png"
+}
+images {
+  image: "/assets/Tiles/treeGreen_low.png"
+}
+images {
+  image: "/assets/Tiles/treeGreen_mid.png"
+}
+images {
+  image: "/assets/Tiles/waveLava.png"
+}
+images {
+  image: "/assets/Tiles/waveWater.png"
+}
+extrude_borders: 2

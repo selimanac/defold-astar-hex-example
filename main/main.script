@@ -1,0 +1,137 @@
+local hexagon               = require("hexagon.hexagon") -- -> https://github.com/selimanac/defold-hexagon
+local utils                 = require("main.utils")
+
+local hex_coords            = hexagon.OffsetCoord()
+local highlighted_hex_tiles = {}
+local current_hex_id        = -1
+local hex_index_id          = -1
+local path_start            = { x = 0, y = 0 }
+local path_end              = { x = 0, y = 0 }
+
+-- ASTAR SETTINGS
+local map_width             = 12
+local map_height            = 9
+local direction             = astar.DIRECTION_EIGHT
+local allocate              = map_width * map_height
+local typical_adjacent      = map_width * map_height
+local cache                 = true  -- Optional. Default is true
+local use_zero              = false -- Optional. Default is false = 1 based
+local map_vflip             = false -- Optional. Default is false
+
+-- SET IT TO -> astar.HEX_EVENR or astar.HEX_ODDR to see the difference
+-- https://github.com/selimanac/defold-astar?tab=readme-ov-file#astarset_map_typetype
+local map_type              = astar.HEX_ODDR
+
+local world                 = {
+	3, 3, 4, 3, 3, 3, 1, 1, 4, 0, 0, 0,
+	3, 3, 0, 3, 3, 3, 1, 1, 4, 0, 4, 0,
+	3, 3, 3, 0, 3, 3, 3, 1, 4, 0, 1, 0,
+	0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0,
+	0, 0, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0,
+	5, 5, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0,
+	5, 5, 5, 5, 0, 5, 5, 1, 4, 0, 0, 0,
+	5, 5, 5, 4, 0, 0, 0, 1, 4, 0, 0, 0,
+}
+local costs                 = {
+	[0] = {
+		1.0, -- E
+		1.0, -- N
+		1.0, -- W
+		1.0, -- S
+		1.41, -- NE
+		1.41, -- NW
+		1.41, -- SW
+		1.41 -- SE
+	}
+}
+local entities              = { 4 }
+
+local function clear_highlights()
+	for _, hex in pairs(highlighted_hex_tiles) do
+		sprite.play_flipbook(hex['hex_tile_sprite'], hash('tileGrass_tile'))
+	end
+	highlighted_hex_tiles = {}
+
+	collectgarbage('collect')
+end
+
+local function solve_path(hex_coords)
+	path_start = utils.get_path_start()
+	path_end.x = hex_coords.x
+	path_end.y = hex_coords.y
+
+	local current_hex = {}
+	local status, size, total_cost, path = astar.solve(path_start.x, path_start.y, path_end.x, path_end.y)
+
+	if status == astar.SOLVED then
+		print("SOLVED")
+		print("Path Size", size)
+		print("Total Cost:", total_cost)
+
+		for i, tile in ipairs(path) do
+			print("x:", tile.x, "y: ", tile.y, "tile ID: ", tile.id)
+			current_hex = utils.get_hex(tile.x, tile.y)
+			sprite.play_flipbook(current_hex['hex_tile_sprite'], hash('tileSnow_tile'))
+			highlighted_hex_tiles[i] = { hex_tile_sprite = current_hex['hex_tile_sprite'] }
+		end
+	elseif status == astar.NO_SOLUTION then
+		print("NO_SOLUTION")
+	elseif status == astar.START_END_SAME then
+		print("START_END_SAME")
+	end
+end
+
+local function solve_near()
+	path_start = utils.get_path_start()
+
+	local current_hex = {}
+	local near_status, near_size, nears = astar.solve_near(path_start.x, path_start.y, 1.41)
+
+	if near_status == astar.SOLVED then
+		print("NEAR SOLVED")
+		print("Near Size:", near_size)
+		for _, tile in ipairs(nears) do
+			print("x:", tile.x, "y: ", tile.y, "tile ID: ", tile.id)
+			current_hex = utils.get_hex(tile.x, tile.y)
+			sprite.play_flipbook(current_hex['hex_tile_sprite'], hash('tileMagic_tile'))
+		end
+	elseif near_status == astar.NO_SOLUTION then
+		print("NEAR NO_SOLUTION")
+	elseif near_status == astar.START_END_SAME then
+		print("NEAR START_END_SAME")
+	end
+end
+
+function init()
+	msg.post("@render:", "clear_color", { color = vmath.vector4(94 / 255, 129 / 255, 162 / 255, 0) })
+	msg.post(".", "acquire_input_focus")
+
+	-- GENERATE HEX MAP
+	utils.generate_map(world, map_type, map_width, map_height)
+
+	-- INIT ASTAR
+	astar.setup(map_width, map_height, direction, allocate, typical_adjacent, cache, use_zero, map_vflip)
+	astar.set_map_type(map_type)
+	astar.set_map(world)
+	astar.set_costs(costs)
+	astar.set_entities(entities)
+	astar.use_entities(true)
+	astar.print_map()
+
+	-- SOLVE NEAR HEX TILES
+	solve_near()
+end
+
+function on_input(_, _, action)
+	hex_coords = utils.input(action)
+
+	if hex_coords ~= nil then
+		hex_index_id = utils.coords_to_index(hex_coords.x, hex_coords.y)
+		if current_hex_id ~= hex_index_id then
+			clear_highlights()
+			current_hex_id = hex_index_id
+			solve_path(hex_coords)
+		end
+	end
+end
