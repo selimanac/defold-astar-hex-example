@@ -9,7 +9,8 @@ local hex_map         = {}
 local cursor_position = vmath.vector3(0, 0, 0)
 local world_position  = vmath.vector3()
 
--- Since the hex sprite image is not a perfect hexagon, we have to manually add the correct size and offset. REF: https://www.redblobgames.com/grids/hexagons/#basics
+-- Since the hex sprite image is not a perfect hexagon, we have to manually add the correct size and offset.
+-- See: https://www.redblobgames.com/grids/hexagons/#basics
 local layout          = hexagon.Layout(hexagon.layout_pointy, hexagon.Point(37.5, 35), hexagon.Point(0, 14))
 
 local layout_type     = hexagon.ODD

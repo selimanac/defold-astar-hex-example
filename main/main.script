@@ -19,7 +19,7 @@ local use_zero              = false -- Optional. Default is false = 1 based
 local map_vflip             = false -- Optional. Default is false
 
 -- SET IT TO -> astar.HEX_EVENR or astar.HEX_ODDR to see the difference
--- https://github.com/selimanac/defold-astar?tab=readme-ov-file#astarset_map_typetype
+-- See: https://github.com/selimanac/defold-astar?tab=readme-ov-file#astarset_map_typetype
 local map_type              = astar.HEX_ODDR
 
 local world                 = {
