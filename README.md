@@ -3,6 +3,8 @@
 ![A*](/.github/astar-hex.png?raw=true)
 
 Hexagonal Example for [defold-astar](https://github.com/selimanac/defold-astar?tab=readme-ov-file)  
+Test it: [https://selimanac.github.io/defold-astar-hex-example/](https://selimanac.github.io/defold-astar-hex-example/)   
+  
 Art Credit: [Kenny](https://kenney.nl/)   
 
 ### Dependencies:
