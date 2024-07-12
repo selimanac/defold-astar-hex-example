@@ -8,8 +8,8 @@ Test it: [https://selimanac.github.io/defold-astar-hex-example/](https://seliman
 Art Credit: [Kenny](https://kenney.nl/)   
 
 
-You can set the map type odd-r or even-r. odd-q and even-q types are not supported in this example.  
-Just set the `map_type` variable on ``main.script` file accordingly.  
+You can set the map type to odd-r or even-r. odd-q and even-q types are not supported in this example.  
+Just set the `map_type` variable on `main.script` file accordingly.  
 
 ```lua
 
