@@ -10,7 +10,6 @@ Thumbs.db
 builtins
 /.vscode
 .vscode
-
 *.clang-format
 compiler_commands.json
 *.sublime-project
